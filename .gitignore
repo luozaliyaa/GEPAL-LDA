@@ -1,0 +1,12 @@
+﻿# IDE files
+.idea/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Large regenerated model cache
+data/D-lnc_with_features/rf_negative_sampler.joblib
