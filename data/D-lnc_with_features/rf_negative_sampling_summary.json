@@ -1,9 +1,9 @@
 {
   "num_lnc": 2224,
   "num_drug": 1225,
-  "num_positive_pairs": 32706,
-  "num_unlabeled_pairs": 2691694,
-  "num_selected_negatives": 32706,
+  "num_positive_pairs": 32716,
+  "num_unlabeled_pairs": 2691684,
+  "num_selected_negatives": 32716,
   "pair_feature_dim": 256,
   "lnc_pca_dim": 64,
   "drug_pca_dim": 64,
@@ -11,5 +11,6 @@
   "provisional_negative_multiplier": 2,
   "n_estimators": 500,
   "max_depth": 20,
-  "random_seed": 42
+  "random_seed": 42,
+  "experiment_artifact_note": "The preserved data_2 experiment artifacts retain selected pairs and labels, but not original per-pair RF probabilities."
 }

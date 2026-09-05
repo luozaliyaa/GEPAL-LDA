@@ -10,3 +10,11 @@ __pycache__/
 
 # Large regenerated model cache
 data/D-lnc_with_features/rf_negative_sampler.joblib
+
+# Release archives and generated evaluation/model outputs (hosted on Zenodo)
+/GEPAL-LDA-data/
+/GEPAL-LDA-data.zip
+/data/data.zip
+/data/data_2/
+/metrics/
+/train_res/

@@ -42,7 +42,7 @@ Important files include:
 
 - `lnc_features.txt`: lncRNA feature matrix.
 - `drug_features.txt`: drug feature matrix.
-- `adj_matrix_modified.txt`: lncRNA-drug adjacency matrix used for graph construction.
+- `adj_matrix.txt`: lncRNA-drug adjacency matrix used for graph construction.
 - `lnc_drug_dataset_rf_balanced.json`: balanced positive and reliable negative samples.
 - `10fold_rf/`: 10-fold train/validation/test splits.
 - `rf_negative_sampling_summary.json`: random forest negative sampling summary.

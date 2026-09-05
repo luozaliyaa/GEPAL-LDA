@@ -1,10 +1,11 @@
 import pandas as pd
 import json
+from experiment_paths import DATA_ROOT
 
 # === 1. 文件路径 ===
 predict_csv = "predict_pairs.csv"
-lnc_index_path = "./data/D-lnc_with_features/lncRNA_index.csv"
-drug_index_path = "./data/D-lnc_with_features/drug_index.csv"
+lnc_index_path = DATA_ROOT / "lncRNA_index.csv"
+drug_index_path = DATA_ROOT / "drug_index.csv"
 
 # === 2. 读取数据 ===
 predict_df = pd.read_csv(predict_csv)

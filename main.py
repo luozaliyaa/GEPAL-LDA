@@ -2,6 +2,7 @@
 
 from my_finetune import train
 from my_inference import inference
+from experiment_paths import FOLD_ROOT
 import torch, gc
 import json
 import os
@@ -30,8 +31,8 @@ if __name__ == "__main__":
         train(
             fold=fold,
             num_epochs=2,
-            data_path=f"./data/D-lnc_with_features/10fold_rf/fold_{fold}/lnc_drug_train.json",
-            val_data_path=f"./data/D-lnc_with_features/10fold_rf/fold_{fold}/lnc_drug_val.json",
+            data_path=str(FOLD_ROOT / f"fold_{fold}" / "lnc_drug_train.json"),
+            val_data_path=str(FOLD_ROOT / f"fold_{fold}" / "lnc_drug_val.json"),
             output_dir=f"./train_res_rf/fold_{fold}/lora-alpaca",
             model_save_path = f"./train_res_rf/fold_{fold}/gat_adapter.pth"
         )
@@ -43,7 +44,7 @@ if __name__ == "__main__":
         metrics = inference(
             fold=fold,
             lora_weights=f"./train_res_rf/fold_{fold}/lora-alpaca",
-            test_data_path=f"./data/D-lnc_with_features/10fold_rf/fold_{fold}/lnc_drug_test.json",
+            test_data_path=str(FOLD_ROOT / f"fold_{fold}" / "lnc_drug_test.json"),
             ckpt_path=f"./train_res_rf/fold_{fold}/gat_adapter.pth",
             metrics_log_path=f"./metrics_rf/fold_{fold}/predict_log_fold_{fold}.txt",
             plot_path=f"./metrics_rf/fold_{fold}/fold_{fold}_plots"

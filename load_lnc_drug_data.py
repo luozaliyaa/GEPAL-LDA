@@ -8,13 +8,14 @@ import numpy as np
 import torch
 from torch_geometric.data import Data
 import json
+from experiment_paths import DATA_ROOT, FOLD_ROOT
 
 def build_gat_data(d=256, fold=1):
     # === 1. 读取特征和邻接矩阵 ===
-    lnc_features = np.loadtxt("./data/D-lnc_with_features/lnc_features.txt", delimiter="\t")
-    drug_features = np.loadtxt("./data/D-lnc_with_features/drug_features.txt", delimiter="\t")
-    adj_matrix = np.loadtxt("./data/D-lnc_with_features/adj_matrix.txt", delimiter="\t").astype(int)
-    test_json = f"./data/D-lnc_with_features/10fold_rf/fold_{fold}/lnc_drug_test.json"
+    lnc_features = np.loadtxt(DATA_ROOT / "lnc_features.txt", delimiter="\t")
+    drug_features = np.loadtxt(DATA_ROOT / "drug_features.txt", delimiter="\t")
+    adj_matrix = np.loadtxt(DATA_ROOT / "adj_matrix.txt", delimiter="\t").astype(int)
+    test_json = FOLD_ROOT / f"fold_{fold}" / "lnc_drug_test.json"
     num_lnc, num_drug = adj_matrix.shape
     print(f"lncRNA: {num_lnc}, drug: {num_drug}")
 
@@ -61,6 +62,5 @@ def build_gat_data(d=256, fold=1):
     print("Data construction done (test edges removed)")
 
     return data
-
 
 
